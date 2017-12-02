@@ -49,12 +49,8 @@ while userInput.lower() != "exit":
             if item in options.keys():
                 addItem = raw_input("How many? ")
                 if item in shoppingList.keys():
-                    print "add to existing"
-                    print shoppingList[item]["quantity"]
                     shoppingList[item]["quantity"] += int(addItem)
-                    print shoppingList[item]["quantity"]
                 else:
-                    print "adding new to shopping list"
                     shoppingList[item] = {"price": options[item], "quantity": int(addItem)}
         else:
             print "price\tcount\titem"

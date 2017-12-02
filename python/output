@@ -1,0 +1,61 @@
+-----------------------
+|Shopping List Generator|
+-----------------------
+
+What would you like to do?
+Add - Add an item
+Display - show what can be bought
+Save - save the current options list wtih any new items to the index file
+Export - send shopping list to an HTML report file
+Exit - exits the program
+@display
+             wingStopLrgFries 	-	3.19
+          screwDriverSmirnoff 	-	2.99
+            quesaritoTacoBell 	-	2.69
+                  wingStop7pc 	-	9.99
+              pacifico24ozCan 	-	2.69
+                  parking2Hrs 	-	6.00
+            oldSpiceDeodorent 	-	3.79
+                   wineGallon 	-	6.99
+                  wingStop4pc 	-	6.59
+ McDonald2Spicy2BurgerSpecial 	-	5.06
+  chickenStripSamchWataburger 	-	5.89
+             wingStopRegFries 	-	1.99
+           fruitSnacksWelches 	-	2.09
+@add
+Creating shopping list...
+
+Item name: parking2Hrs
+How many? 1
+Item name: wineGallon
+How many? 2
+Item name: coffeeCup
+Item doesn't exist. Create it? y\n
+y
+How much does each cost? $4.20
+How many? 2
+Item name: coffeeCup
+How many? 3
+Item name: done
+@display
+             wingStopLrgFries 	-	3.19
+          screwDriverSmirnoff 	-	2.99
+            quesaritoTacoBell 	-	2.69
+                  wingStop7pc 	-	9.99
+              pacifico24ozCan 	-	2.69
+                  parking2Hrs 	-	6.00
+                    coffeeCup 	-	4.20
+            oldSpiceDeodorent 	-	3.79
+                   wineGallon 	-	6.99
+                  wingStop4pc 	-	6.59
+ McDonald2Spicy2BurgerSpecial 	-	5.06
+  chickenStripSamchWataburger 	-	5.89
+             wingStopRegFries 	-	1.99
+           fruitSnacksWelches 	-	2.09
+@exit
+Closing program
+{'parking2Hrs': {'price': 6.0, 'quantity': 1}, 'coffeeCup': {'price': 4.2, 'quantity': 5}, 'wineGallon': {'price': 6.99, 'quantity': 2}}
+                  parking2Hrs  $6.00/ea  X1  lineTot $6.00
+                    coffeeCup  $4.20/ea  X5  lineTot $21.00
+                   wineGallon  $6.99/ea  X2  lineTot $13.98
+                                       Total cost is $40.98
