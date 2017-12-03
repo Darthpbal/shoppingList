@@ -13,24 +13,24 @@ while len(line) > 0:
 else:
     indxFile.close()
 
-
-
+def prompt():
+    title = "Shopping List Generator"
+    print " " + "-" * len(title) + " "
+    print "|" + title + "|"
+    print " " + "-" * len(title) + " \n"
+    print "What would you like to do?"
+    print "Add - Add an item"
+    print "Display - show what can be bought"
+    print "Save - save the current options list wtih any new items to the index file"
+    print "Export - send shopping list to an HTML report file"
+    print "Cart - Show current contents of the cart"
+    print "Help - Shows this content"
+    print "Exit - exits the program"
 shoppingList = {}
 
 #########     PROGRAM START      ########
 
-
-title = "Shopping List Generator"
-
-print " " + "-" * len(title) + " "
-print "|" + title + "|"
-print " " + "-" * len(title) + " \n"
-print "What would you like to do?"
-print "Add - Add an item"
-print "Display - show what can be bought"
-print "Save - save the current options list wtih any new items to the index file"
-print "Export - send shopping list to an HTML report file"
-print "Exit - exits the program"
+prompt()
 
 userInput = ""
 while userInput.lower() != "exit":
@@ -62,8 +62,22 @@ while userInput.lower() != "exit":
         for item in options:
             print "%30s" % (item),
             print "\t-\t%0.2f" % options[item]
+    elif userInput.lower() == "cart":
+        runningTot = 0
+        for item in shoppingList:
+            print "%30s\t%1.2f X %d = $%1.2f" % (item, shoppingList[item]["price"], shoppingList[item]["quantity"], shoppingList[item]["price"] * shoppingList[item]["quantity"])
+            runningTot += shoppingList[item]["price"] * shoppingList[item]["quantity"]
+        print "Running Total: $" + str(runningTot)
+    elif userInput.lower() == "updateItem":
+        print "updateItem"
+        pass
+    elif userInput.lower() == "help":
+        prompt()
     elif userInput.lower() == "save":
-        print "saver"
+        saveFile = open("index", "w")
+        for item in options:
+            saveFile.write( item + "," + str( options[item] ) + "\n" )
+        saveFile.close()
     elif userInput.lower() == "export":
         print "exporter"
         userInput = "exit"
@@ -72,9 +86,3 @@ while userInput.lower() != "exit":
             print "option error... Try again"
 else:
     print "Closing program"
-    print shoppingList
-    total = 0.00
-    for item in shoppingList:
-        print "%30s  $%0.2f/ea  X%d  lineTot $%0.2f" % ( item, shoppingList[item]["price"], shoppingList[item]["quantity"], shoppingList[item]["price"] * shoppingList[item]["quantity"] )
-        total += shoppingList[item]["price"] * shoppingList[item]["quantity"]
-    print " " * 40 + "Total cost is $%0.2f" % total
