@@ -1,3 +1,12 @@
+"""
+TODO:
+	-Add tax back calculator that can take the balance and tax from a receipt and store the tax rate to apply to.
+	-Add a method for adding products that are priced per weight.
+
+	Getting weird:
+	-Add barcodes and maybe some method for looking up the product weight or something. I want a way to take the previously stored data and calculate how much a particular meals costs from it's ingredients
+"""
+
 
 indxFile = open("index", "r")
 
