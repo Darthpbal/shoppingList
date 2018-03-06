@@ -17,8 +17,11 @@ while len(line) > 0:
     line = indxFile.readline()
     if len(line) > 0:
         items = line.split(",")
+        print items
         items[1] = items[1][:len(items[1]) - 1]
+        print items
         options[items[0]] = float( items[1] )
+        print options
 else:
     indxFile.close()
 
@@ -95,3 +98,4 @@ while userInput.lower() != "exit":
             print "option error... Try again"
 else:
     print "Closing program"
+    print options
